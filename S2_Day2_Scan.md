@@ -152,3 +152,124 @@ sudo nmap -sU <IP>
 ```bash
 nmap -sX <IP>
 ```
+## Operating System Detection
+
+- Used to detect the operating system of the host.
+
+### Syntax
+
+```bash
+sudo nmap -O [IP]         # OS detection
+sudo nmap -A [IP]         # OS and version detection
+````
+
+---
+
+## Banner Grabbing
+
+* Retrieves text or metadata that a service sends when you connect to it.
+* Useful for identifying service versions.
+
+### Syntax
+
+```bash
+nmap -sV [IP]
+```
+
+---
+
+## Scan Speeds
+
+* Nmap timing template: `-T<0-5>`
+
+  * Higher value = faster scan
+  * Faster scans increase **detection** and reduce **accuracy**.
+
+---
+
+## Nmap Scripting Engine (NSE)
+
+* Allows running scripts on detected ports/services.
+* Uses **Lua programming language**.
+
+### Examples
+
+```bash
+--script banner            # Banner grabbing
+--script vuln              # Test if ports are vulnerable
+-sC                       # Load default scripts
+```
+
+---
+
+## Saving Nmap Outputs
+
+| Option | Format             |
+| ------ | ------------------ |
+| `-oG`  | Greppable format   |
+| `-oX`  | XML format         |
+| `-oN`  | Normal text format |
+
+### Example
+
+```bash
+nmap -oN output.txt [IP]
+```
+
+---
+
+## Nmap Verbose Mode
+
+* Displays more scan information.
+
+### Syntax
+
+```bash
+-v     # Verbose
+-vv    # More detail
+-vvv   # Much more detail
+```
+
+---
+
+## Nmap Firewall Evasion Techniques
+
+1. **Decoy Scan**
+
+   * Obscures the origin IP address.
+
+   ```bash
+   nmap -D RND:5 [IP]
+   ```
+
+2. **Fragment Scan**
+
+   * Sends fragmented packets to evade detection.
+
+   ```bash
+   nmap -f -p21 [IP]
+   ```
+
+3. **MAC Address Spoofing**
+
+   * Spoofs the MAC address.
+
+   ```bash
+   nmap --spoof-mac Apple [IP]
+   nmap --spoof-mac [MAC_ADDRESS] [IP]
+   ```
+
+4. **Source Port Manipulation**
+
+   * Changes the source port (e.g., port 21).
+
+   ```bash
+   nmap -g 21 -p21 [IP]
+   ```
+
+---
+
+**Important**: Always use scanning tools with proper **authorization** and for ethical purposes only.
+
+
+
