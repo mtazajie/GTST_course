@@ -1,8 +1,8 @@
-🕵️‍♀️ System Reconnaissance
+System Reconnaissance
 
 System reconnaissance involves gathering crucial information about the target network or system to plan attacks effectively.
 
-### 🔍 Network Information - Nmap
+###  Network Information - Nmap
 
 Nmap is a powerful network scanning tool used to collect the following:
 
@@ -10,7 +10,7 @@ Nmap is a powerful network scanning tool used to collect the following:
 * **Physical & Software Info:** Hardware and OS-level details.
 * **Topology:** Network structure and host relationships.
 
-### 🖥️ System Information - Nmap
+### System Information - Nmap
 
 * **Running Services (Ports):** Identify open and filtered ports.
 * **Operating System Detection:** Guess the OS using TCP/IP fingerprinting.
